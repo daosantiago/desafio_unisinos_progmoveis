@@ -1,6 +1,7 @@
 import 'package:desafio_unisinos/components/task.dart';
 import 'package:desafio_unisinos/data/task_inherited.dart';
 import 'package:desafio_unisinos/screens/form_screen.dart';
+import 'package:desafio_unisinos/screens/user_form_screen.dart';
 import 'package:desafio_unisinos/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +43,12 @@ class _InitialScreenState extends State<InitialScreen> {
             ),*/
             child: Column(
               children: [
-                Container(height: 250, width: 100),
+                Container(
+                  padding: const EdgeInsets.only(top: 120),
+                  height: 250,
+                  width: 100,
+                  child: Text("HOME", style: TextStyle(fontSize: 30)),
+                ),
                 _MenuButton(
                   icon: Icons.search,
                   label: 'CADASTRAR MATERIAL',
@@ -51,7 +57,14 @@ class _InitialScreenState extends State<InitialScreen> {
                 _MenuButton(
                   icon: Icons.person,
                   label: 'CADASTRAR USUÁRIO',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (newContext) => UserFormScreen(),
+                      ),
+                    );
+                  },
                 ),
                 _MenuButton(
                   icon: Icons.update,
@@ -68,7 +81,7 @@ class _InitialScreenState extends State<InitialScreen> {
               ],
             ),
           ),
-          floatingActionButton: FloatingActionButton(
+          /*floatingActionButton: FloatingActionButton(
             onPressed: () {
               Navigator.push(
                 context,
@@ -78,7 +91,7 @@ class _InitialScreenState extends State<InitialScreen> {
               );
             },
             child: Icon(Icons.add),
-          ),
+          ),*/
         ),
       ],
     );
@@ -123,7 +136,6 @@ class _MenuButton extends StatelessWidget {
   }
 }
 
-
 class _BottomMenu extends StatelessWidget {
   const _BottomMenu({super.key});
 
@@ -151,7 +163,6 @@ class _BottomMenu extends StatelessWidget {
     );
   }
 }
-
 
 class _BottomMenuItem extends StatelessWidget {
   final IconData icon;
