@@ -49,33 +49,8 @@ class _InitialScreenState extends State<InitialScreen> {
                   width: 100,
                   child: Text("HOME", style: TextStyle(fontSize: 30)),
                 ),
-                _MenuButton(
-                  icon: Icons.search,
-                  label: 'CADASTRAR MATERIAL',
-                  onPressed: () {},
-                ),
-                _MenuButton(
-                  icon: Icons.person,
-                  label: 'CADASTRAR USUÁRIO',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (newContext) => UserFormScreen(),
-                      ),
-                    );
-                  },
-                ),
-                _MenuButton(
-                  icon: Icons.update,
-                  label: 'ATUALIZAR DADOS',
-                  onPressed: () {},
-                ),
-                _MenuButton(
-                  icon: Icons.delete,
-                  label: 'DELETAR USUÁRIO',
-                  onPressed: () {},
-                ),
+                // MainMenu(parentContext: context),
+                MainMenu(),
                 const Spacer(),
                 _BottomMenu(),
               ],
