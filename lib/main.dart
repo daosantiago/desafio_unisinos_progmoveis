@@ -1,5 +1,3 @@
-import 'package:desafio_unisinos/data/task_inherited.dart';
-import 'package:desafio_unisinos/screens/form_screen.dart';
 import 'package:desafio_unisinos/screens/initial_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: TaskInherited(child: const InitialScreen()),
+      home: InitialScreen(),
     );
   }
 }
