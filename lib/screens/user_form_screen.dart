@@ -103,4 +103,14 @@ class _InputButton extends StatelessWidget {
       ),
     );
   }
+
+  Map<String, TextInputType> keyboardTypes = {
+    'TELEFONE': TextInputType.number,
+    'CPF': TextInputType.number,
+    'EMAIL': TextInputType.emailAddress,
+  };
+
+  TextInputType getKeyboardType(String hint) {
+    return keyboardTypes[hint] ?? TextInputType.text;
+  }
 }
