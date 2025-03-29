@@ -1,13 +1,50 @@
+import 'package:desafio_unisinos/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class MaterialsScreen extends StatelessWidget {
   final List<Map<String, String>> materials = [
-    {"image": "assets/images/pipe1.png", "name": "Solicitar"},
-    {"image": "assets/images/pipe2.png", "name": "Solicitar"},
-    {"image": "assets/images/pipe3.png", "name": "Solicitar"},
-    {"image": "assets/images/pipe4.png", "name": "Solicitar"},
-    {"image": "assets/images/pipe5.png", "name": "Solicitar"},
-    {"image": "assets/images/pipe6.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe1.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe2.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe3.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe4.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe5.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe6.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe1.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe2.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe3.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe4.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe5.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe6.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe1.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe2.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe3.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe4.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe5.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe6.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe1.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe2.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe3.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe4.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe5.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe6.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe1.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe2.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe3.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe4.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe5.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe6.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe1.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe2.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe3.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe4.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe5.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe6.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe1.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe2.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe3.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe4.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe5.png", "name": "Solicitar"},
+    {"image": "assets/images/pipes/pipe6.png", "name": "Solicitar"},
   ];
 
   void _showConfirmationDialog(BuildContext context) {
@@ -31,7 +68,7 @@ class MaterialsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("ARA TUBOS"),
-        backgroundColor: Colors.orange,
+        backgroundColor: AppColors.mainColor,
       ),
       body: Column(
         children: [
@@ -63,16 +100,6 @@ class MaterialsScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Perfil"),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Pedidos"),
-          BottomNavigationBarItem(icon: Icon(Icons.build), label: "Serviços"),
-          BottomNavigationBarItem(icon: Icon(Icons.camera), label: "Galeria"),
-        ],
-        selectedItemColor: Colors.orange,
-        unselectedItemColor: Colors.grey,
       ),
     );
   }
