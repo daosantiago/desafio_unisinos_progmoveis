@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:desafio_unisinos/theme/app_colors.dart';
 
 class UserFormScreen extends StatelessWidget {
-  const UserFormScreen({super.key});
+  UserFormScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class UserFormScreen extends StatelessWidget {
             opacity: const AlwaysStoppedAnimation(.9),
             fit: BoxFit.cover,
             height: double.infinity,
-            width: double.infinity,
+            width: double.maxFinite,
           ),
         ),
         Scaffold(
@@ -23,10 +23,10 @@ class UserFormScreen extends StatelessWidget {
           appBar: AppBar(
             centerTitle: true,
             backgroundColor: AppColors.mainColor,
-            leading: Container(),
-            title:  Text('ARA   TUBOS'),
+            title: Text('ARA   TUBOS'),
           ),
-          body: SingleChildScrollView(
+          body: Container(
+            color: AppColors.background,
             padding: const EdgeInsets.symmetric(horizontal: 32),
             child: Column(
               children: [
@@ -56,7 +56,10 @@ class UserFormScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    child: const Text("CADASTRAR", style: TextStyle(fontSize: 16)),
+                    child: const Text(
+                      "CADASTRAR",
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 40),
@@ -74,7 +77,7 @@ class _InputButton extends StatelessWidget {
   final String hint;
   final bool isPassword;
 
-  const _InputButton({
+  _InputButton({
     required this.icon,
     required this.hint,
     this.isPassword = false,
@@ -90,11 +93,16 @@ class _InputButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(30),
         ),
         child: TextField(
+          keyboardType: getKeyboardType(hint),
           obscureText: isPassword,
+          style: const TextStyle(color: Colors.black),
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.symmetric(vertical: 16),
             prefixIcon: Icon(icon, color: Colors.black),
-            suffixIcon: isPassword ? const Icon(Icons.visibility, color: Colors.black) : null,
+            suffixIcon:
+                isPassword
+                    ? const Icon(Icons.visibility, color: Colors.black)
+                    : null,
             hintText: hint,
             hintStyle: const TextStyle(color: Colors.black),
             border: InputBorder.none,
