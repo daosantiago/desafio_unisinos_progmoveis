@@ -1,3 +1,7 @@
+import 'package:desafio_unisinos/screens/notifications_screen.dart';
+import 'package:desafio_unisinos/screens/profile_screen.dart';
+import 'package:desafio_unisinos/screens/task_screen.dart';
+import 'package:desafio_unisinos/screens/tools_screen.dart';
 import 'package:desafio_unisinos/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -15,16 +19,45 @@ class BottomMenu extends StatelessWidget {
           color: Colors.black87,
           borderRadius: BorderRadius.circular(16),
         ),
-        child: Column(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                _BottomMenuItem(icon: Icons.person),
-                _BottomMenuItem(icon: Icons.build),
-                _BottomMenuItem(icon: Icons.chat),
-                _BottomMenuItem(icon: Icons.assignment),
-              ],
+            // EXEMPLO de botões já com navegação
+            _BottomMenuItem(
+              icon: Icons.person,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const ProfileScreen()),
+                );
+              },
+            ),
+            _BottomMenuItem(
+              icon: Icons.build,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const ToolsScreen()),
+                );
+              },
+            ),
+            _BottomMenuItem(
+              icon: Icons.chat,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => NotificationsScreen()),
+                );
+              },
+            ),
+            _BottomMenuItem(
+              icon: Icons.assignment,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const TaskScreen()),
+                );
+              },
             ),
           ],
         ),
@@ -35,19 +68,26 @@ class BottomMenu extends StatelessWidget {
 
 class _BottomMenuItem extends StatelessWidget {
   final IconData icon;
+  final VoidCallback onPressed;
 
-  const _BottomMenuItem({required this.icon});
+  const _BottomMenuItem({
+    required this.icon,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 48,
-      height: 48,
-      decoration: BoxDecoration(
-        color: AppColors.mainColor,
-        borderRadius: BorderRadius.circular(12),
+    return GestureDetector(
+      onTap: onPressed, // Chama a função ao clicar
+      child: Container(
+        width: 48,
+        height: 48,
+        decoration: BoxDecoration(
+          color: AppColors.mainColor,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Icon(icon, color: Colors.black),
       ),
-      child: Icon(icon, color: Colors.black),
     );
   }
 }

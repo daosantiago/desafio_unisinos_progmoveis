@@ -1,3 +1,4 @@
+import 'package:desafio_unisinos/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class NotificationsScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ Widget build(BuildContext context) {
 return Scaffold(
     appBar: AppBar(
     title: Text("ARA TUBOS"),
-    backgroundColor: Colors.orange,
+    backgroundColor: AppColors.mainColor,
     ),
     body: Column(
     children: [
@@ -44,16 +45,6 @@ return Scaffold(
         ),
         ),
     ],
-    ),
-    bottomNavigationBar: BottomNavigationBar(
-    items: [
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: "Perfil"),
-        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Pedidos"),
-        BottomNavigationBarItem(icon: Icon(Icons.build), label: "Serviços"),
-        BottomNavigationBarItem(icon: Icon(Icons.camera), label: "Galeria"),
-    ],
-    selectedItemColor: Colors.orange,
-    unselectedItemColor: Colors.grey,
     ),
 );
 }
