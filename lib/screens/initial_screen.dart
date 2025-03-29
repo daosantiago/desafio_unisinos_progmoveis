@@ -150,16 +150,7 @@ class _BottomMenu extends StatelessWidget {
           color: Colors.black87,
           borderRadius: BorderRadius.circular(16),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            _BottomMenuItem(icon: Icons.person),
-            _BottomMenuItem(icon: Icons.build),
-            _BottomMenuItem(icon: Icons.chat),
-            _BottomMenuItem(icon: Icons.assignment),
-          ],
-        ),
-      ),
+      ],
     );
   }
 }
